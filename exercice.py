@@ -3,27 +3,38 @@
 
 
 def order(values: list = None) -> bool:
-    if values is None:
-        # TODO: Demander les valeurs ici
-        pass
-
+    if len(values) == 10:
+        return True , values==sorted(values)
+            # TODO: Demander les valeurs ici
+    values.append(input("Entre une valeur"))
     return False
+
+
 
 
 def anagrams(words: list = None) -> bool:
     if words is None:
         # TODO: Demander les mots ici
-        pass
+        words =[input(f"Quelles est ton {n} mot") for n in range(0,2)]
 
-    return False
+    for i in range (0,len(words)):
+        if words[1][i] != words[2][len(words) - i]:
+            return False
+        else:
+            return True
 
 
 def contains_doubles(items: list) -> bool:
-    return False
+    my_set = {items}
+    if len(my_set) == len(list):
+        return True
+    else:
+        return False
 
 
 def best_grades(student_grades: dict) -> dict:
     # TODO: Retourner un dictionnaire contenant le nom de l'étudiant ayant la meilleure moyenne ainsi que sa moyenne
+
     return {}
 
 
@@ -47,7 +58,8 @@ def print_recipe(ingredients) -> None:
 
 def main() -> None:
     print(f"On essaie d'ordonner les valeurs...")
-    order()
+    while False:
+        order()
 
     print(f"On vérifie les anagrammes...")
     anagrams()
