@@ -1,7 +1,7 @@
 test_anagram (__main__.TestExercice) ... ERROR
 test_doubles (__main__.TestExercice) ... ERROR
-test_grades (__main__.TestExercice) ... FAIL
-test_histogram (__main__.TestExercice) ... FAIL
+test_grades (__main__.TestExercice) ... ERROR
+test_histogram (__main__.TestExercice) ... ERROR
 test_order (__main__.TestExercice) ... ERROR
 
 ======================================================================
@@ -12,9 +12,7 @@ Traceback (most recent call last):
     output = [exercice.anagrams(v) for v in words]
   File "test_exercice.py", line 35, in <listcomp>
     output = [exercice.anagrams(v) for v in words]
-  File "/home/runner/work/c01_ch6_exercices-XavierJDN/c01_ch6_exercices-XavierJDN/exercice.py", line 21, in anagrams
-    if words[1][i] != words[2][len(words) - i]:
-IndexError: list index out of range
+AttributeError: module 'exercice' has no attribute 'anagrams'
 
 ======================================================================
 ERROR: test_doubles (__main__.TestExercice)
@@ -24,9 +22,27 @@ Traceback (most recent call last):
     output = [exercice.contains_doubles(v) for v in values]
   File "test_exercice.py", line 49, in <listcomp>
     output = [exercice.contains_doubles(v) for v in values]
-  File "/home/runner/work/c01_ch6_exercices-XavierJDN/c01_ch6_exercices-XavierJDN/exercice.py", line 28, in contains_doubles
-    my_set = {items}
-TypeError: unhashable type: 'list'
+AttributeError: module 'exercice' has no attribute 'contains_doubles'
+
+======================================================================
+ERROR: test_grades (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 63, in test_grades
+    output = [exercice.best_grades(v) for v in values]
+  File "test_exercice.py", line 63, in <listcomp>
+    output = [exercice.best_grades(v) for v in values]
+AttributeError: module 'exercice' has no attribute 'best_grades'
+
+======================================================================
+ERROR: test_histogram (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 78, in test_histogram
+    output = [exercice.histogram(s) for s in sentences]
+  File "test_exercice.py", line 78, in <listcomp>
+    output = [exercice.histogram(s) for s in sentences]
+AttributeError: module 'exercice' has no attribute 'histogram'
 
 ======================================================================
 ERROR: test_order (__main__.TestExercice)
@@ -36,27 +52,9 @@ Traceback (most recent call last):
     output = [exercice.order(v) for v in values]
   File "test_exercice.py", line 19, in <listcomp>
     output = [exercice.order(v) for v in values]
-  File "/home/runner/work/c01_ch6_exercices-XavierJDN/c01_ch6_exercices-XavierJDN/exercice.py", line 9, in order
-    values.append(input("Entre une valeur"))
-EOFError: EOF when reading a line
-
-======================================================================
-FAIL: test_grades (__main__.TestExercice)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "test_exercice.py", line 69, in test_grades
-    'Erreur dans les notes'
-AssertionError: [{}] is not an instance of <class 'dict'> : First argument is not a dictionary
-
-======================================================================
-FAIL: test_histogram (__main__.TestExercice)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "test_exercice.py", line 84, in test_histogram
-    'Erreur dans les histogrammes'
-AssertionError: [({}, []), ({}, [])] is not an instance of <class 'dict'> : First argument is not a dictionary
+AttributeError: module 'exercice' has no attribute 'order'
 
 ----------------------------------------------------------------------
 Ran 5 tests in 0.001s
 
-FAILED (failures=2, errors=3)
+FAILED (errors=5)
